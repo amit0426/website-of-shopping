@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+      <style>
+         form{
+             text-align: center;
+         }
+         h1{
+             text-align: center;
+             color: teal;
+         }
+      </style>
+</head>
+<body>
+      <h1>PLEASE CHEAC</h1>
+
+      <form>
+        <input id="card" type="Number" placeholder="Enter your card Number" />
+        <input id="cvv" type="Number" placeholder="Cvv" />
+        <input id="date" type="date" placeholder="Expiry date" />
+        <input id="otp" type="Number" placeholder="Enter OTP">
+        <input id="name"type="text" placeholder="Enter Name">
+        <input type="submit" />
+      </form>
+     
+</body>
+</html>
+
+<script>
+     document.querySelector("form").addEventListener("submit", check);
+
+     var arr = JSON.parse(localStorage.getItem("cart")) || []
+
+      
+
+    //  var arr = [];
+    //  var pay = JSON.parse(localStorage.getItem(""))
+     
+
+     function check(){
+         event.preventDefault();
+
+         var obj = {
+
+            card : document.querySelector("#card").value,
+          date : document.querySelector("#date").value,
+          otp : document.querySelector("#otp").value,
+          name : document.querySelector("#name").value,
+
+         };
+        // console.log(obj)
+         arr.push(obj);
+        
+        localStorage.setItem("out",JSON.stringify(arr));
+        console.log(arr);
+
+        window.location.href ="index.html"
+        alert("successfull verification")
+        
+     }
+</script>
